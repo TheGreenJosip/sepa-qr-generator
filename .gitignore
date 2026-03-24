@@ -5,6 +5,13 @@ Thumbs.db
 node_modules
 pnpm-debug.log
 
+# generated output
+/qr-codes/
+
+# local examples / secrets
+/.env
+/examples/*.local.js
+
 /package-lock.json
 /yarn.lock
 /shrinkwrap.yaml

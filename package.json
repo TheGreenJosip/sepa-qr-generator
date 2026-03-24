@@ -3,9 +3,14 @@
 	"description": "Generate a QR code to initiate a SEPA bank transfer.",
 	"version": "2.0.2",
 	"main": "index.js",
+	"bin": {
+		"sepa-payment-qr-code": "bin/sepa-payment-qr-code.js"
+	},
 	"files": [
+		"bin/",
+		"examples/",
 		"index.js",
-		"example.js"
+		"src/"
 	],
 	"keywords": [
 		"payment",
@@ -30,14 +35,20 @@
 		"node": ">=18"
 	},
 	"dependencies": {
-		"iban": "0.0.14"
+		"iban": "0.0.14",
+		"qrcode": "^1.5.4"
 	},
 	"devDependencies": {
 		"eslint": "^8.24.0"
 	},
 	"scripts": {
+		"cli": "node bin/sepa-payment-qr-code.js",
+		"example": "node examples/example.js",
+		"example:local": "node examples/example.local.js",
+		"png:interactive": "node generate-png.js",
 		"lint": "eslint .",
 		"test": "env NODE_ENV=dev node test.js",
 		"prepublishOnly": "npm run lint && npm test"
-	}
+	},
+	"packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
 }
